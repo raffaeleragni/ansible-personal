@@ -1,0 +1,17 @@
+- name: Compilers
+  hosts: localhost
+  tasks:
+    - name: packages
+      become: yes
+      package:
+        state: present
+        name:
+          - build-essential
+          - cmake
+          - clang
+          - mold
+          - pkg-config
+          - luarocks
+          - libssl-dev
+          - libasound2-dev
+          - libudev-dev

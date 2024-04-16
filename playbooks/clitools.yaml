@@ -1,0 +1,16 @@
+- name: Cli
+  hosts: localhost
+  tasks:
+    - name: cli packages
+      become: yes
+      package:
+        state: present
+        name:
+          - curl
+          - jq
+          - tmux
+          - htop
+          - ripgrep
+          - tldr
+          - git
+          - gitk

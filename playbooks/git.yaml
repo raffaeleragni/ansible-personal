@@ -1,0 +1,8 @@
+- name: Git
+  hosts: localhost
+  tasks:
+    - name: git
+      become: yes
+      package:
+        name: git
+        state: present

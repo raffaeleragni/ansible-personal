@@ -1,0 +1,69 @@
+- name: cargo packages
+  hosts: localhost
+  tasks:
+    - name: bottom
+      community.general.cargo:
+        name: bottom
+    - name: bat
+      community.general.cargo:
+        name: bat
+    - name: exa
+      community.general.cargo:
+        name: exa
+    - name: procs
+      community.general.cargo:
+        name: procs
+    - name: du-dust
+      community.general.cargo:
+        name: du-dust
+    - name: ripgrep
+      community.general.cargo:
+        name: ripgrep
+    - name: mask
+      community.general.cargo:
+        name: mask
+    - name: fd
+      community.general.cargo:
+        name: fd-find
+    - name: cargo-watch
+      community.general.cargo:
+        name: cargo-watch
+    - name: cargo-vet
+      community.general.cargo:
+        name: cargo-vet
+    - name: cargo-audit
+      community.general.cargo:
+        name: cargo-audit
+    - name: cargo-public-api
+      community.general.cargo:
+        name: cargo-public-api
+    - name: cargo-nextest
+      community.general.cargo:
+        name: cargo-nextest
+    - name: cargo-tarpaulin
+      community.general.cargo:
+        name: cargo-tarpaulin
+    - name: cargo-mutants
+      community.general.cargo:
+        name: cargo-mutants
+    - name: sqlx-cli
+      community.general.cargo:
+        name: sqlx-cli
+    - name: hyperfine
+      community.general.cargo:
+        name: hyperfine
+    - name: ytop
+      community.general.cargo:
+        name: ytop
+    - name: tealdeer
+      community.general.cargo:
+        name: tealdeer
+    - name: bandwhich
+      community.general.cargo:
+        name: bandwhich
+    - name: git-delta
+      community.general.cargo:
+        name: git-delta
+    - name: boringtun-cli
+      community.general.cargo:
+        name: boringtun-cli

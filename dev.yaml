@@ -1,0 +1,12 @@
+---
+- import_playbook: playbooks/clitools.yaml
+- import_playbook: playbooks/editors.yaml
+- import_playbook: playbooks/compilers.yaml
+- import_playbook: playbooks/git.yaml
+- import_playbook: playbooks/dots.yaml
+- import_playbook: playbooks/rust.yaml
+- import_playbook: playbooks/cargo_installations.yaml
+- import_playbook: playbooks/neovim.yaml
+- import_playbook: playbooks/docker.yaml
+- import_playbook: playbooks/software.yaml
+

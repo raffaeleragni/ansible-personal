@@ -1,0 +1,30 @@
+- name: Install Docker
+  hosts: localhost
+  tasks:
+    - name: Install prerequisite packages
+      become: yes
+      package:
+        state: present
+        name:
+          - ca-certificates
+          - curl
+          - gpg
+    - name: Add docker GPG key
+      become: yes
+      apt_key:
+        state: present
+        url: https://download.docker.com/linux/debian/gpg
+    - name: Add docker repository
+      become: yes
+      apt_repository:
+        state: present
+        repo: deb https://download.docker.com/linux/debian bookworm stable
+    - name: Install docker-ce
+      become: yes
+      apt:
+        state: latest
+        name: docker-ce
+        update_cache: true
+    - name: Add user to docker
+      user: name=user groups=docker append=yes
+      become: true

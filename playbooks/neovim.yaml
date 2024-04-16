@@ -1,0 +1,32 @@
+- name: Neovim installer
+  hosts: localhost
+  tasks:
+    - name: Check if nvim exist
+      command: which nvim
+      ignore_errors: true
+      register: neovimcheck
+    - name: Install neovim
+      when: neovimcheck.rc != 0
+      block:
+        - name: required packages for building neovim
+          become: yes
+          package:
+            state: present
+            name: 
+              - build-essential
+              - cmake
+              - pkg-config
+              - gettext
+        - name: Git checkout neovim
+          git:
+            repo: https://github.com/neovim/neovim
+            dest: /tmp/neovim
+        - name: Select version
+          command: git checkout v0.9.5
+          args:
+            chdir: /tmp/neovim
+        - name: Make install
+          become: true
+          command: make install CMAKE_BUILD_TYPE=RelWithDebInfo CMAKE_INSTALL_PREFIX=/usr/local/
+          args:
+            chdir: /tmp/neovim

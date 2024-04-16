@@ -1,0 +1,8 @@
+- name: Editors
+  hosts: localhost
+  tasks:
+    - name: vim
+      become: yes
+      package:
+        name: vim
+        state: present

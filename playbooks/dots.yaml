@@ -1,0 +1,20 @@
+- name: Dot files
+  hosts: localhost
+  tasks:
+    - name: Check dot dir exists
+      stat:
+        path: ~/.dot
+      register: dotdir
+    - name: Git checkout
+      git:
+        repo: git@github.com:raffaeleragni/dot.git
+        dest: ~/.dot
+      when: not dotdir.stat.exists
+    - name: Check dots include in bashrc
+      shell: grep -c 'for file in ~/.dot/*.bashrc; do source "$file"; done' ~/.bashrc || true
+      register: dot_bash_exists
+    - name: Add dots include bashrc
+      lineinfile:
+        dest: ~/.bashrc
+        line: 'for file in ~/.dot/*.bashrc; do source "$file"; done'
+      when: dot_bash_exists.stdout == "0"
