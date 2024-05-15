@@ -67,3 +67,6 @@
     - name: boringtun-cli
       community.general.cargo:
         name: boringtun-cli
+    - name: panamax
+      community.general.cargo:
+        name: panamax
