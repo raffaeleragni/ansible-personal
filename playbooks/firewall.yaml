@@ -56,3 +56,10 @@
         proto: any
         rule: allow
         direction: out
+    - name: firewall rule ntp
+      become: yes
+      ufw:
+        port: 123
+        proto: any
+        rule: allow
+        direction: out
