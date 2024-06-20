@@ -9,4 +9,5 @@
 - import_playbook: playbooks/neovim.yaml
 - import_playbook: playbooks/docker.yaml
 - import_playbook: playbooks/software.yaml
+- import_playbook: playbooks/blacklist.yaml
 

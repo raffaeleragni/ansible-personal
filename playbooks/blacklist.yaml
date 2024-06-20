@@ -1,0 +1,10 @@
+- name: blackliste packages
+  hosts: localhost
+  tasks:
+    - name: blacklisted packages
+      become: yes
+      package:
+        state: absent
+        name:
+          - cups
+          - avahi-daemon
