@@ -1,0 +1,9 @@
+- name: firewall setup
+  hosts: localhost
+  tasks:
+    - name: firewall install
+      become: yes
+      package:
+        state: present
+        name:
+          - ufw
