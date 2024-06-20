@@ -49,3 +49,10 @@
         proto: any
         rule: allow
         direction: out
+    - name: firewall rule dns/tls
+      become: yes
+      ufw:
+        port: 853
+        proto: any
+        rule: allow
+        direction: out
