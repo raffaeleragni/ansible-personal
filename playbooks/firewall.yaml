@@ -42,13 +42,6 @@
         proto: tcp
         rule: allow
         direction: out
-    - name: firewall rule dns
-      become: yes
-      ufw:
-        port: 53
-        proto: any
-        rule: allow
-        direction: out
     - name: firewall rule dns/tls
       become: yes
       ufw:
