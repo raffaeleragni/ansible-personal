@@ -1,53 +1,17 @@
 - name: networking
   hosts: localhost
   tasks:
-    - name: install systemd-resolved
+    - name: install sytemd-resolved
       become: yes
       package:
         state: present
         name: ["systemd-resolved"]
-    - name: install systemd-timesyncd
+    - name: install sytemd-timesyncd
       become: yes
       package:
         state: present
         name: ["systemd-timesyncd"]
-    - name: configure systemd-resolved
-      become: yes
-      lineinfile:
-        path: /etc/systemd/resolved.conf
-        state: present
-        line: "Cache=yes"
-    - name: configure systemd-resolved, dnssec
-      become: yes
-      lineinfile:
-        path: /etc/systemd/resolved.conf
-        state: present
-        line: "DNSSEC=yes"
-    - name: configure systemd-resolved, use tls
-      become: yes
-      lineinfile:
-        path: /etc/systemd/resolved.conf
-        state: present
-        line: "DNSOverTLS=yes"
-    - name: configure systemd-resolved, disable local broadcasting
-      become: yes
-      lineinfile:
-        path: /etc/systemd/resolved.conf
-        state: present
-        line: "LLMNR=no"
-    - name: start systemd-resolved
-      become: yes
-      systemd_service:
-        state: started
-        enabled: true
-        name: systemd-resolved
-    - name: start systemd-timesyncd
-      become: yes
-      systemd_service:
-        state: started
-        enabled: true
-        name: systemd-timesyncd
-- name: firewall
+- name: firewall setup
   hosts: localhost
   tasks:
     - name: firewall install
