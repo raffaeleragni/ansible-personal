@@ -1,6 +1,9 @@
 - name: cargo packages
   hosts: localhost
   tasks:
+    - name: cargo-binstall
+      community.general.cargo:
+        name: cargo-binstall
     - name: bottom
       community.general.cargo:
         name: bottom
