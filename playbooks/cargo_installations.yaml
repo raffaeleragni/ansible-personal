@@ -73,3 +73,6 @@
     - name: panamax
       community.general.cargo:
         name: panamax
+    - name: xsv
+      community.general.cargo:
+        name: xsv
