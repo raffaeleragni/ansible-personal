@@ -39,7 +39,7 @@
         name: cargo-audit
     - name: cargo-outdated
       community.general.cargo:
-        name: cargo-outdaed
+        name: cargo-outdated
     - name: cargo-public-api
       community.general.cargo:
         name: cargo-public-api
