@@ -1,7 +1,6 @@
 ---
 - import_playbook: playbooks/firewall.yaml
 - import_playbook: playbooks/clitools.yaml
-- import_playbook: playbooks/terminal.yaml
 - import_playbook: playbooks/editors.yaml
 - import_playbook: playbooks/compilers.yaml
 - import_playbook: playbooks/git.yaml

@@ -4,6 +4,9 @@
     - name: cargo-binstall
       community.general.cargo:
         name: cargo-binstall
+    - name: alacritty
+      community.general.cargo:
+        name: alacritty
     - name: bottom
       community.general.cargo:
         name: bottom

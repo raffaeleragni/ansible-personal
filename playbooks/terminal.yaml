@@ -1,9 +1,0 @@
-- name: terminal
-  hosts: localhost
-  tasks:
-    - name: terminal
-      become: yes
-      package:
-        state: present
-        name:
-          - alacritty
