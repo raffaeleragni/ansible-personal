@@ -22,7 +22,7 @@
             repo: https://github.com/neovim/neovim
             dest: /tmp/neovim
         - name: Select version
-          command: git checkout v0.10.0
+          command: git checkout v0.10.1
           args:
             chdir: /tmp/neovim
         - name: Make install
