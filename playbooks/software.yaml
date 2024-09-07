@@ -10,3 +10,5 @@
           - nextcloud-desktop
           - thunderbird
           - screenkey
+          - podman
+          - podman-compose
